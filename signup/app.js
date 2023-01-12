@@ -51,7 +51,7 @@ const isValidEmail = (email) => {
 
 email.addEventListener('input', (e) => {
     if (email.value == '') {
-        btn.setAttribute('disabled', true);
+        // btn.setAttribute('disabled', true);
         email.parentElement.classList.add('error');
         confirmEmail.innerHTML = 'Email is required';
     } else if (!isValidEmail(email.value)) {

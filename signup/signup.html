@@ -123,7 +123,7 @@
 
 
         let usersInfo = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
-        if (usersInfo.some((v) => { return v.email == email })) {
+        if (usersInfo.some((user) => { return user.email == email })) {
             alert("This Email ID is already in use!")
         } else {
             alert("User registered successfully!! Please login now!")
