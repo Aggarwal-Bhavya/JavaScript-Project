@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="/menu/styles.css">
+    <link rel="icon" href="favicon.png">
+    <title>Our-Menu</title>
+</head>
+
+<body>
+    <script src="navbar.js"></script>
+
+    <div class="title" style="padding-top: 100px;">
+        <h2>Favourites</h2>
+        <div class="underline"></div>
+    </div>
+
+    <div class="section-center" style="padding: 50px;">
+        <!-- DISPLAYING FAVOURITE ITEMS ON MENU -->
+    </div>
+
+    <script>
+        const menu = [
+            {
+                id: 1,
+                title: "buttermilk pancakes",
+                category: "breakfast",
+                price: 200,
+                img: "/menu/images/item-1.jpeg",
+                desc: `Buttermilk pancakes are deliciously buttery and fluffy with golden, crisp edges and an irresistible buttermilk flavour.`,
+            },
+            {
+                id: 2,
+                title: "quarantine buddy",
+                category: "beverages",
+                price: 160,
+                img: "/menu/images/item-9.jpeg",
+                desc: `Coffee is a beverage brewed from the roasted and ground seeds of the tropical evergreen coffee plant.`,
+            },
+            {
+                id: 3,
+                title: "diner double",
+                category: "lunch",
+                price: 450,
+                img: "/menu/images/item-2.jpeg",
+                desc: `Our menu features burgers that are hand crafted with 100% Angus beef. Always fresh, never frozen. We use fresh, natural and delicious ingredients.`,
+            },
+            {
+                id: 7,
+                title: "bacon overflow",
+                category: "breakfast",
+                price: 899,
+                img: "/menu/images/item-7.jpeg",
+                desc: `A flame-grilled beef patty with crispy bacon, melted American cheese, crunchy pickles, yellow mustard, and ketchup on a toasted sesame seed bun.`,
+            },
+            {
+                id: 5,
+                title: "oreo dream",
+                category: "beverages",
+                price: 189,
+                img: "/menu/images/item-6.jpeg",
+                desc: `Real ice cream mixed with OREO Cookie Pieces and chocolate syrup into a thick and creamy shake, finished with whipped topping and a cherry.`,
+            },
+        ];
+
+        const section = document.querySelector('.section-center');
+
+        window.addEventListener('DOMContentLoaded', function () {
+            displayMenuItems(menu);
+        });
+
+        function displayMenuItems(menuItems) {
+            let displayMenu = menuItems.map(function (item) {
+                return `<article class="menu-item">
+                <img src=${item.img} alt=${item.title} class="photo" />
+                <div class="item-info">
+                    <header>
+                        <h4>${item.title}</h4>
+                        <h4 class="price">₹${item.price}</h4>
+                    </header>
+                    <p class="item-text">
+                        ${item.desc}
+                    </p>
+                </div>
+                </article>`
+            });
+            displayMenu = displayMenu.join(" ");
+            section.innerHTML = displayMenu;
+        };
+    </script>
+    <script>
+        var check = localStorage.getItem('code');
+        if (check == 'secret') {
+
+        } else {
+            window.location.href = 'login/login.html';
+        }
+    </script>
+</body>
+
+</html>

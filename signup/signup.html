@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="signup.css" type="text/css">
+    <link rel="icon" href="../favicon.png">
+    <title>Our-Menu Signup</title>
+</head>
+
+<body>
+    <!-- Parent Cotainer -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3 col-md-2"></div>
+
+            <!-- Outer container for signup-panel -->
+            <div class="col-lg-6 col-md-8 signup-box">
+
+                <!-- Signup panel title div -->
+                <div class="col-lg-12 signup-title">
+                    SIGNUP PANEL
+                </div>
+
+                <!-- Parent div for complete form -->
+                <div class="col-lg-12 signup-form">
+
+                    <form action="/" method="post">
+
+                        <!-- Each element of label-input pair has class form-group -->
+                        <div class="form-group">
+
+                            <!-- USERNAME -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">USERNAME</label> -->
+                                <input type="text" id="username" class="form-control" placeholder="Username" required />
+                                <img src="./images/icon-error.svg" class="error-icon" alt="error-img" />
+                                <p class="error-text" id="errorUsername"></p>
+                            </div>
+
+                            <!-- EMAIL -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">E-MAIL</label> -->
+                                <input type="email" id="email" class="form-control" placeholder="E-mail" required />
+                                <img src="./images/icon-error.svg" class="error-icon" alt="error-img" />
+                                <p class="error-text" id="errorEmail"></p>
+                            </div>
+
+                            <!-- PHONE NUMBER -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">PHONE NUMBER</label> -->
+                                <input type="text" id="phone" class="form-control" placeholder="Phone Number"
+                                    required />
+                                <img src="./images/icon-error.svg" class="error-icon" alt="error-img" />
+                                <p class="error-text" id="errorPhone"></p>
+                            </div>
+
+                            <!-- PASSWORD -->
+                            <div class="form-group ourDiv">
+                                <!-- <label class="form-control-label">PASSWORD</label> -->
+                                <input type="password" id="password" class="form-control" placeholder="Password"
+                                    required />
+                                <i class="far fa-eye" id="togglePassword1"
+                                    style="color: #9d9d9d; cursor: pointer; margin-top: -35px;margin-right: 20px;""></i>
+                                <!-- <input type=" checkbox" onclick="showEntry()" /> Show Password -->
+
+                                <img src="./images/icon-error.svg" class="error-icon" alt="error-img" />
+                                <p class="error-text" id="errorPassword"></p>
+                            </div>
+
+                            <!-- CONFIRM PASSWORD -->
+                            <div class="form-group">
+                                <!-- <label class="form-control-label">CONFIRM PASSWORD</label> -->
+                                <input type="password" id="confirm-password" class="form-control"
+                                    placeholder="Confirm Password" required />
+                                <!-- <div class="eye"> -->
+                                <i class="far fa-eye" id="togglePassword2"
+                                    style="color: #9d9d9d; cursor: pointer; margin-top: -35px;margin-right: 20px; float: right;"></i>
+                                <!-- </div>                                -->
+                                <img src="./images/icon-error.svg" class="error-icon" alt="error-img" />
+                                <p class="error-text" id="errorConfirmPassword"></p>
+                            </div>
+
+                            <!-- SIGN UP BUTTON -->
+                            <div class="col-lg-6 signup-btm signup-button">
+                                <div class="unit">
+                                    <button id="signBtn" type="submit" class="btn btn-outline-primary" value="SIGNUP"
+                                        onclick="saveData()">SIGNUP</button>
+                                    <label><a href="../login/login.html">Login NOW!</a></label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+
+</body>
+
+<script>
+    function saveData() {
+        let username, email, phone, password, cPassword;
+        username = document.getElementById("username").value;
+        email = document.getElementById("email").value;
+        phone = document.getElementById("phone").value;
+        password = document.getElementById("password").value;
+        cPassword = document.getElementById("confirm-password").value;
+        location.reload();
+
+        document.getElementById("username").value != '';
+        document.getElementById("email").value != '';
+        document.getElementById("phone").value != '';
+        document.getElementById("password").value != '';
+        document.getElementById("confirm-password").value != '';
+
+
+        let usersInfo = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+        if (usersInfo.some((v) => { return v.email == email })) {
+            alert("This Email ID is already in use!")
+        } else {
+            alert("User registered successfully!! Please login now!")
+            usersInfo.push({
+                "username": username,
+                "email": email,
+                "phone": phone,
+                "password": password,
+                "cPassword": cPassword
+            })
+            localStorage.setItem("users", JSON.stringify(usersInfo));
+            document.getElementById("username").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("phone").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("confirm-password").value = "";
+            window.location.href = "../login/login.html";
+        }
+    }
+
+</script>
+
+</html>

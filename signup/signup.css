@@ -1,0 +1,147 @@
+body {
+    background: #1b4556;
+    font-family: 'Roboto', sans-serif;
+}
+
+.signup-box {
+    margin-top: 75px;
+    height: auto;
+    background: #0c1920;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 3px 6px rgba(178, 175, 175, 0.1), 0 3px 6px rgba(144, 139, 139, 0.2);
+}
+
+.signup-title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    font-weight: bolder;
+    color: rgb(202, 202, 202);
+}
+
+.signup-form {
+    margin-top: 25px;
+    text-align: center;
+}
+
+input[type='text'], [type='email'] {
+    background-color: #0c1920;
+    border-radius: 10px;
+    border-color: #b2b3b4;
+    font-weight: bold;
+    outline: 0;
+    color: #9d9d9d;
+}
+
+input[type='password'] {
+    background-color: #0c1920;
+    border-radius: 10px;
+    border-color: #b2b3b4;
+    font-weight: bold;
+    outline: 0;
+    color: #9d9d9d;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    outline: 0;
+}
+
+.form-group.ourDiv i {
+    float: right;
+    
+}
+
+/* .eye{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 20px;
+} */
+
+.form-control:focus {
+    border-color: inherit;
+    box-shadow: none;
+    background-color: #0c1920;
+    color: rgb(251, 251, 251);
+    outline: 0;
+}
+
+label {
+    margin-bottom: 1px;
+}
+
+.error-text {
+    font-size: 12px;
+    color: #bf7171;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+.error-text, 
+.error-icon {
+    display: none;
+}
+
+.form-group.error .error-text,
+.form-group.error .error-icon {
+    display: block;
+}
+
+.form-group.error input {
+    border-color: #bf7171;
+}
+
+.btn-outline-primary:hover {
+    background-color: #5a8ca9;
+    right: 0px;
+    color: #ffffff;
+}
+
+.btn {
+    color: #9d9d9d;
+    border-radius: 10px;
+    border-color: #9d9d9d;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.signup-btm {
+    float: left;
+}
+
+.signup-button {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.error-icon {
+    position: absolute;
+    right: 0;
+}
+
+a {
+    color:#9d9d9d !important;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    float: right;
+    text-decoration: none;
+}
+
+.unit {
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    /* flex-direction: row; */
+    /* justify-content: space-between; */
+}
