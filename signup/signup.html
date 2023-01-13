@@ -31,7 +31,7 @@
                 <!-- Parent div for complete form -->
                 <div class="col-lg-12 signup-form">
 
-                    <form action="/" method="post">
+                    <form action="/" method="POST">
 
                         <!-- Each element of label-input pair has class form-group -->
                         <div class="form-group">
@@ -124,8 +124,12 @@
 
         let usersInfo = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
         if (usersInfo.some((user) => { return user.email == email })) {
-            alert("This Email ID is already in use!")
-        } else {
+            alert("This Email ID is already in use!");
+        }
+        // else if (!username.value || !email.value || !password.value || !phone.value || !cPassword.value) {
+        //     e.preventDefault();
+        // }
+        else {
             alert("User registered successfully!! Please login now!")
             usersInfo.push({
                 "username": username,

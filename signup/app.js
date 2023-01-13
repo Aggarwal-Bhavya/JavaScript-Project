@@ -137,15 +137,27 @@ togglePassword2.addEventListener('click', function(e) {
     togglePassword2.classList.toggle('fa-eye-slash');
 });
 
-const form = document.querySelector('.signup-form form');
+// const form = document.querySelector('.signup-form form');
+// form.addEventListener('submit', function(e) {
+//     if(username.value === '' || email.value === '' || password.value === '' || phone.value === '' || cPassword.value === '') {
+//         e.preventDefault();
+//     }
+// });
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // console.log(username.value);
-    // console.log(inputValidator);
-    validateInputs();
+// form.addEventListener('submit', (e) => {
+//     // if(!username.value || !email.value || !phone.value || !password.value || !cPassword.value) {
+//     //     e.preventDefault();
+//     //     alert("Input fields can't be empty!");
+//     //     return false;
+//     // } else {
+
+//     // }
+//     e.preventDefault();
+//     // console.log(username.value);
+//     // console.log(inputValidator);
+//     // validateInputs();
     
-});
+// });
 
 
 // let allTrue = Object.keys(inputValidator).every((item) => {
