@@ -95,6 +95,7 @@ window.addEventListener('DOMContentLoaded', function () {
 function displayMenuItems(menuItems) {
     let displayMenu = menuItems.map(function (item) {
         //console.log(item);
+        // <input type="submit" value="Cart +" class="add-to-cart" />
 
         return `<article class="menu-item">
         <img src=${item.img} alt=${item.title} class="photo" />
@@ -102,6 +103,7 @@ function displayMenuItems(menuItems) {
             <header>
                 <h4>${item.title}</h4>
                 <h4 class="price">₹${item.price}</h4>
+                <button type="submit" class="add-to-cart"><i class="fas fa-shopping-cart">+</i></button>
             </header>
             <p class="item-text">
                 ${item.desc}
