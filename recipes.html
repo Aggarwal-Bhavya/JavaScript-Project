@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link rel="stylesheet" href="/menu/styles.css">
+    <link rel="icon" href="favicon.png">
+    <title>Our-Menu</title>
+    <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+</head>
+
+<body>
+    <!-- NAVIGATION BAR -->
+    <script src="navbar.js"></script>
+
+    <!-- TITLE -->
+    <div class="title" style="padding-top: 100px;">
+        <h2>Recipes</h2>
+        <div class="underline"></div>
+    </div>
+
+    <!-- SEARCH FEATURE -->
+    <!-- SEARCH BOX CONTAINER -->
+    <div class="container">
+        <section class="search-section">
+            <div class="search-bar">
+                <form>
+                    <input id="search" type="text" placeholder="Search for a recipe" />
+                    <ion-icon name="search"></ion-icon>
+                </form>
+            </div>
+        </section>
+
+        <!-- SEARCH RESULT -->
+        <div class="search-result">
+            <!--
+            <div class="item">
+                <img src="./menu/menu-item.jpeg" alt="" class="photo">
+                <div class="flex-container" style="display: flex; align-items: center; justify-content: space-between;">
+                    <h4 style="margin-top: 10px; padding-top: 8px; letter-spacing: 0.3rem; text-transform: none;">This is a recipe</h4>
+                    <a href="#">View Recipe</a>
+                </div>
+                <p class="item-data">Calories: 120</p>
+            </div> -->
+        </div>
+    </div>
+    <script>
+        var check = localStorage.getItem('code');
+        if (check == 'secret') {
+
+        } else {
+            window.location.href = 'login/login.html';
+        }
+    </script>
+    <script src="./menu/main.js"></script>
+    <!-- <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script> -->
+</body>
+
+</html>

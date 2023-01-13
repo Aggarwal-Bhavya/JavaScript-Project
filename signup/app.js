@@ -86,7 +86,9 @@ phone.addEventListener('input', (e) => {
 
 // PASSWORD
 const isValidPassword = (password) => {
-    var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/;
+    // var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/;
+    // var regex = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[*.!@$%^&(){}\[\]:;<>,.?/~_+-=|]).{8,32}$/;
+    var regex = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/;
     return password.match(regex);
 }
 
@@ -96,7 +98,7 @@ password.addEventListener('input', (e) => {
         confirmPassword.innerHTML = 'Password is required';
     } else if (!isValidPassword(password.value)) {
         password.parentElement.classList.add('error');
-        confirmPassword.innerHTML = 'Password must be at least 8 characters that include at least 1 lowercase, 1 uppercase, and 1 number';
+        confirmPassword.innerHTML = 'Password must be at least 8 characters and must include 1 lowercase, 1 uppercase, 1 special character and 1 number';
     } else {
         // inputValidator['password'] = true;
         // console.log(inputValidator);

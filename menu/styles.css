@@ -253,9 +253,9 @@ a {
     /* height: 220px; */
     /* -webkit-transition: width .35s ease-in-out;
     transition: width .35s ease-in-out; */
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    transform: scale(1.15);
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
     transition: 1.5s ease;
 }
 
@@ -454,4 +454,107 @@ nav {
 
 .question-text p {
     margin-bottom: 0;
+}
+
+/* Recipes Page */
+.search-section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    height: 90%;
+    padding: 20px;
+}
+
+form {
+    width: 90%;
+    margin: 20px auto;
+    background: transparent;
+    border: none;
+    outline: none;
+    /* border-radius: var(--radius); */
+}
+
+form input {
+    width: 450px;
+    max-width: 400px;
+    border-radius: var(--radius);
+    background: var(--clr-gold);
+    color: var(--clr-white);
+    padding: 7px;
+    border: 2px solid var(--clr-black);
+    border-color: var(--clr-gold);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+input::placeholder {
+    /* color: var(--clr-white); */
+    letter-spacing: var(--spacing);
+    color: var(--clr-grey-10);
+    text-align: center;
+}
+
+input:hover {
+    color: var(--clr-white);
+    background: var(--clr-black);
+    border: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+form ion-icon {
+    /* width: 8%; */
+    /* font-size: 3rem; */
+    /* margin-bottom: -8px; */
+    color: var(--clr-grey-10);
+    display: inline-block;
+    float: right;
+    margin-top: -28.5px;
+}
+
+.search-result {
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-gap: 25px;
+    grid-template: auto / repeat(auto-fit, minmax(500px, 1fr));
+}
+
+/* .item {
+    width: 100%;
+    border-radius: var(--radius);
+    background: var(--clr-white);
+    padding: 15px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+} */
+
+.item {
+    background: var(--clr-white);
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    border-radius: var(--radius);
+    border-bottom: 4px solid transparent;
+    box-shadow: var(--light-shadow);
+    margin-bottom: 1rem;
+}
+
+.item img {
+    width: 50%;
+    height: 200px;
+    /* float: center; */
+    object-fit: cover;
+}
+
+/* .item.flex-container {
+    display: flex;
+    align-items: center;
+} */
+
+.item-data {
+    display: block;
+    letter-spacing: 0.2rem;
+    font-size: 0.7rem;
 }
