@@ -36,14 +36,14 @@
                 <!-- question title -->
                 <div class="question-title">
                     <p>Do you accept all major credit cards?</p>
-                    
+
                 </div>
 
                 <!-- question answer -->
                 <div class="question-text">
                     <p>
-                        Yes, we do accept all major credit and debit cards. 
-                        Besides that, we have multiple options of payment 
+                        Yes, we do accept all major credit and debit cards.
+                        Besides that, we have multiple options of payment
                         available for our customer's convenience.
                     </p>
                 </div>
@@ -54,7 +54,7 @@
                 <!-- question title -->
                 <div class="question-title">
                     <p>Do you support local farmers?</p>
-                    
+
                 </div>
 
                 <!-- question answer -->
@@ -72,7 +72,7 @@
                 <!-- question title -->
                 <div class="question-title">
                     <p>Do you use organic ingredients?</p>
-                    
+
                 </div>
 
                 <!-- question answer -->
@@ -87,15 +87,28 @@
 
         </div>
     </section>
-    
+
 
     <script>
         var check = localStorage.getItem('code');
         if (check == 'secret') {
-    
+
         } else {
             window.location.href = 'login/login.html';
         }
     </script>
+
+    <script>
+        let basket = JSON.parse(localStorage.getItem("basket")) || [];
+
+        let calculation = () => {
+            let cartIcon = document.getElementById('cartAmount');
+            cartIcon.innerHTML = basket.map((item) => item.quantity).reduce((acc, val) => acc + val, 0);
+        }
+
+        calculation();
+    </script>
+
 </body>
+
 </html>
